@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en-us" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./Some R Packages for ROC Curves · R Views_files/analytics.js.download"></script>
+    <title>Some R Packages for ROC Curves · R Views</title>
+    <meta name="generator" content="Hugo 0.55.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="R Views">
+    
+      <meta name="description" content="An R community blog edited by RStudio">
+    
+    
+    <link rel="canonical" href="https://rviews.rstudio.com/2019/03/01/some-r-packages-for-roc-curves/">
+    <link rel="icon" href="https://rviews.rstudio.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://rviews.rstudio.com/apple-touch-icon.png">
+    <link rel="stylesheet" href="./Some R Packages for ROC Curves · R Views_files/style.css">
+    <link rel="stylesheet" href="./Some R Packages for ROC Curves · R Views_files/font-awesome.min.css">
+    <link href="./Some R Packages for ROC Curves · R Views_files/github.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Some R Packages for ROC Curves · R Views_files/jquery.fancybox.css">
+    
+    <link href="./Some R Packages for ROC Curves · R Views_files/css" rel="stylesheet" type="text/css">
+    <link href="./Some R Packages for ROC Curves · R Views_files/css(1)" rel="stylesheet" type="text/css">
+    <meta property="og:title" content="Some R Packages for ROC Curves">
+<meta property="og:description" content="In a recent post, I presented some of the theory underlying ROC curves, and outlined the history leading up to their present popularity for characterizing the performance of machine learning models. In this post, I describe how to search CRAN for packages to plot ROC curves, and highlight six useful packages.
+Although I began with a few ideas about packages that I wanted to talk about, like ROCR and pROC, which I have found useful in the past, I decided to use Gábor Csárdi’s relatively new package pkgsearch to search through CRAN and see what’s out there.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2019/03/01/some-r-packages-for-roc-curves/">
+<meta property="article:published_time" content="2019-03-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-03-01T00:00:00+00:00">
+
+    
+    
+<meta itemprop="name" content="Some R Packages for ROC Curves">
+<meta itemprop="description" content="In a recent post, I presented some of the theory underlying ROC curves, and outlined the history leading up to their present popularity for characterizing the performance of machine learning models. In this post, I describe how to search CRAN for packages to plot ROC curves, and highlight six useful packages.
+Although I began with a few ideas about packages that I wanted to talk about, like ROCR and pROC, which I have found useful in the past, I decided to use Gábor Csárdi’s relatively new package pkgsearch to search through CRAN and see what’s out there.">
+
+
+<meta itemprop="datePublished" content="2019-03-01T00:00:00+00:00">
+<meta itemprop="dateModified" content="2019-03-01T00:00:00+00:00">
+<meta itemprop="wordCount" content="1054">
+
+
+
+<meta itemprop="keywords" content="R Language,ROC curves,Searching for Packages,">
+
+    <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Some R Packages for ROC Curves">
+<meta name="twitter:description" content="In a recent post, I presented some of the theory underlying ROC curves, and outlined the history leading up to their present popularity for characterizing the performance of machine learning models. In this post, I describe how to search CRAN for packages to plot ROC curves, and highlight six useful packages.
+Although I began with a few ideas about packages that I wanted to talk about, like ROCR and pROC, which I have found useful in the past, I decided to use Gábor Csárdi’s relatively new package pkgsearch to search through CRAN and see what’s out there.">
+<meta name="twitter:site" content="@rstudio">
+
+    
+
+    
+    <script src="./Some R Packages for ROC Curves · R Views_files/jquery.min.js.download"></script>
+<script type="text/javascript" async="" src="./Some R Packages for ROC Curves · R Views_files/embed.js.download"></script><link id="mktoForms2BaseStyle" rel="stylesheet" type="text/css" href="./Some R Packages for ROC Curves · R Views_files/forms2.css"><link id="mktoForms2ThemeStyle" rel="stylesheet" type="text/css" href="./Some R Packages for ROC Curves · R Views_files/forms2-theme-plain.css"><link id="mktoFontUrl" rel="stylesheet" type="text/css" href="./Some R Packages for ROC Curves · R Views_files/css(2)"><style>/* Add your custom CSS below */
+</style><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.5c5dad4ae74bbb3422efd01116dc45e6.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.e150012b6029bf98df48f021965c6081.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.ca5fccd41098c8c41f4ca679c8abad9a.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><style type="text/css">.fancybox-margin{margin-right:17px;}</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script src="./Some R Packages for ROC Curves · R Views_files/alfalfalfa.0823c767a3bc925f628afd9bed26c958.js.download" async="" charset="UTF-8"></script></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://rviews.rstudio.com/" id="logo">
+          
+          <i class="logo" style="background-image: url(&#39;/css/images/logo.png&#39;)"></i>
+          
+          <span class="site-title">R Views</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://rviews.rstudio.com/">Home</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://rviews.rstudio.com/about/">About</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://rviews.rstudio.com/contributors/">Contributors</a>
+          
+          
+
+          
+
+          
+          
+          
+          
+          
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="./Some R Packages for ROC Curves · R Views_files/logo.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="https://google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="q" value="site:https://rviews.rstudio.com">
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://rviews.rstudio.com/">Home</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://rviews.rstudio.com/about/">About</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://rviews.rstudio.com/contributors/">Contributors</a></td>
+          
+          
+
+          
+
+          
+          
+          
+          
+          
+          
+          
+          <td>
+          <form action="https://google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="q" value="site:https://rviews.rstudio.com">
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+
+   	<div class="outer">
+   		
+	    <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="./Some R Packages for ROC Curves · R Views_files/logo.png">
+      <h2 id="name">R Views</h2>
+      <h3 id="title">An R community blog edited by <img src="./Some R Packages for ROC Curves · R Views_files/rstudio.svg" width="90" alt="RStudio"></h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Boston, MA</span>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        276
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          245
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tbody><tr>
+          
+<td><a href="https://github.com/rstudio" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="https://linkedin.com/company/rstudio-pbc" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="https://facebook.com/rstudiopbc" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+<td><a href="https://twitter.com/rstudio" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://rviews.rstudio.com/2019/03/01/some-r-packages-for-roc-curves/" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </tbody></table>
+    </div>
+    
+<div class="profile-block subscribe-form">
+  <script src="./Some R Packages for ROC Curves · R Views_files/forms2.min.js.download"></script>
+  <form id="mktoForm_1917" novalidate="novalidate" class="mktoForm mktoHasWidth mktoLayoutLeft" style="font-family: inherit; font-size: 13px; color: rgb(51, 51, 51); width: 239px;"><style type="text/css"></style><div class="mktoFormRow"><div class="mktoFieldDescriptor mktoFormCol" style="margin-bottom: 5px;"><div class="mktoOffset" style="width: 5px;"></div><div class="mktoFieldWrap"><label for="Email" id="LblEmail" class="mktoLabel mktoHasWidth" style="width: 0px;"><div class="mktoAsterix">*</div></label><div class="mktoGutter mktoHasWidth" style="width: 5px;"></div><input id="Email" name="Email" placeholder="Email" maxlength="255" aria-labelledby="LblEmail" type="email" class="mktoField mktoEmailField mktoHasWidth" style="width: 200px;"><div class="mktoClear"></div></div><div class="mktoClear"></div></div><div class="mktoClear"></div></div><div class="mktoFormRow"><div class="mktoFieldDescriptor mktoFormCol" style="margin-bottom: 5px;"><div class="mktoOffset" style="width: 5px;"></div><div class="mktoFieldWrap mktoRequiredField"><label for="privacyPolicyRead" id="LblprivacyPolicyRead" class="mktoLabel mktoHasWidth" style="width: 200px;"><div class="mktoAsterix">*</div><div style="padding-left: 30px;"><span>Please&nbsp;check this box if you&nbsp;accept the RStudio&nbsp;<a href="https://www.rstudio.com/about/privacy-policy/" target="_blank" id="">privacy policy:</a></span></div></label><div class="mktoGutter mktoHasWidth" style="width: 5px;"></div><div class="mktoLogicalField mktoCheckboxList mktoHasWidth mktoRequired" style="width: 20px;"><input name="privacyPolicyRead" id="privacyPolicyRead" type="checkbox" value="yes" aria-required="true" aria-labelledby="LblprivacyPolicyRead" class="mktoField"><label for="privacyPolicyRead" id="LblprivacyPolicyRead"></label></div><div class="mktoClear"></div></div><div class="mktoClear"></div></div><div class="mktoClear"></div></div><div class="mktoButtonRow"><span class="mktoButtonWrap mktoNative" style="margin-left: 87px;"><button type="submit" class="mktoButton">Subscribe</button></span></div><input type="hidden" name="formid" class="mktoField mktoFieldDescriptor" value="1917"><input type="hidden" name="munchkinId" class="mktoField mktoFieldDescriptor" value="709-NXN-706"></form>
+  <script>MktoForms2.loadForm("//app-ab02.marketo.com", "709-NXN-706", 1917);</script>
+</div>
+
+
+  </div>
+</aside>
+
+	    
+
+	    
+<section id="main" class="full-width">
+
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+        <div class="article-inner">
+            
+
+<header class="article-header">
+    <a href="https://rviews.rstudio.com/2019/03/01/some-r-packages-for-roc-curves/">
+    <h1 class="article-title" itemprop="name">
+        Some R Packages for ROC Curves
+    </h1>
+    </a>
+    
+    <div class="article-meta">
+      <div>
+        <i class="fa fa-calendar"></i>
+        <time datetime="2019-03-01 00:00:00 +0000 UTC" itemprop="datePublished">2019-03-01</time>
+      </div>
+    </div>
+</header>
+            <div class="article-entry" itemprop="articleBody">
+                
+                  
+                    
+                    <div>by Joseph Rickert</div>
+                    
+                  
+                
+                
+
+
+<p>In a recent <a href="https://rviews.rstudio.com/2019/01/17/roc-curves/">post</a>, I presented some of the theory underlying ROC curves, and outlined the history leading up to their present popularity for characterizing the performance of machine learning models. In this post, I describe how to search CRAN for packages to plot ROC curves, and highlight six useful packages.</p>
+<p>Although I began with a few ideas about packages that I wanted to talk about, like <a href="https://cran.r-project.org/package=ROCR">ROCR</a> and <a href="https://cran.r-project.org/package=pROC">pROC</a>, which I have found useful in the past, I decided to use Gábor Csárdi’s relatively new package <a href="https://cran.r-project.org/package=pkgsearch">pkgsearch</a> to search through CRAN and see what’s out there. The <code>package_search()</code> function takes a text string as input and uses basic text mining techniques to search all of CRAN. The algorithm searches through package text fields, and produces a score for each package it finds that is weighted by the number of reverse dependencies and downloads.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(tidyverse)  <span class="hljs-comment"># for data manipulation</span>
+<span class="hljs-keyword">library</span>(dlstats)    <span class="hljs-comment"># for package download stats</span>
+<span class="hljs-keyword">library</span>(pkgsearch)  <span class="hljs-comment"># for searching packages</span></code></pre>
+<p>After some trial and error, I settled on the following query, which includes a number of interesting ROC-related packages.</p>
+<pre class="r"><code class="hljs">rocPkg &lt;-  pkg_search(query=<span class="hljs-string">"ROC"</span>,size=<span class="hljs-number">200</span>)</code></pre>
+<p>Then, I narrowed down the field to 46 packages by filtering out orphaned packages and packages with a score less than 190.</p>
+<pre class="r"><code class="hljs">rocPkgShort &lt;- rocPkg %&gt;% 
+               filter(maintainer_name != <span class="hljs-string">"ORPHANED"</span>, score &gt; <span class="hljs-number">190</span>) %&gt;%
+               select(score, package, downloads_last_month) %&gt;%
+               arrange(desc(downloads_last_month))
+head(rocPkgShort)</code></pre>
+<pre><code class="hljs">## # A tibble: 6 x 3
+##   score package  downloads_last_month
+##   &lt;dbl&gt; &lt;chr&gt;                   &lt;int&gt;
+## 1  690. ROCR                    56356
+## 2 7938. pROC                    39584
+## 3 1328. PRROC                    9058
+## 4  833. sROC                     4236
+## 5  266. hmeasure                 1946
+## 6 1021. plotROC                  1672</code></pre>
+<p>To complete the selection process, I did the hard work of browsing the documentation for the packages to pick out what I thought would be generally useful to most data scientists. The following plot uses Guangchuang Yu’s <code>dlstats</code> package to look at the download history for the six packages I selected to profile.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(dlstats)
+shortList &lt;- c(<span class="hljs-string">"pROC"</span>,<span class="hljs-string">"precrec"</span>,<span class="hljs-string">"ROCit"</span>, <span class="hljs-string">"PRROC"</span>,<span class="hljs-string">"ROCR"</span>,<span class="hljs-string">"plotROC"</span>)
+downloads &lt;- cran_stats(shortList)
+ggplot(downloads, aes(end, downloads, group=package, color=package)) +
+  geom_line() + geom_point(aes(shape=package)) +
+  scale_y_continuous(trans = <span class="hljs-string">'log2'</span>)</code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-5-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-5-1.png" width="672"></a></p>
+<div id="rocr---2005" class="section level3">
+<h3><a href="https://cran.r-project.org/package=ROCR">ROCR</a> - 2005</h3>
+<p>ROCR has been around for almost 14 years, and has be a rock-solid workhorse for drawing ROC curves. I particularly like the way the <code>performance()</code> function has you set up calculation of the curve by entering the true positive rate, <code>tpr</code>, and false positive rate, <code>fpr</code>, parameters. Not only is this reassuringly transparent, it shows the flexibility to calculate nearly every performance measure for a <a href="https://en.wikipedia.org/wiki/Binary_classification">binary classifier</a> by entering the appropriate parameter. For example, to produce a precision-recall curve, you would enter <code>prec</code> and <code>rec</code>. Although there is no vignette, the documentation of the package is very good.</p>
+<p>The following code sets up and plots the default <code>ROCR</code> ROC curve using a synthetic data set that comes with the package. I will use this same data set throughout this post.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(ROCR)</code></pre>
+<pre><code class="hljs">## Loading required package: gplots</code></pre>
+<pre><code class="hljs">## 
+## Attaching package: 'gplots'</code></pre>
+<pre><code class="hljs">## The following object is masked from 'package:stats':
+## 
+##     lowess</code></pre>
+<pre class="r"><code class="hljs"><span class="hljs-comment"># plot a ROC curve for a single prediction run</span>
+<span class="hljs-comment"># and color the curve according to cutoff.</span>
+data(ROCR.simple)
+df &lt;- data.frame(ROCR.simple)
+pred &lt;- prediction(df$predictions, df$labels)
+perf &lt;- performance(pred,<span class="hljs-string">"tpr"</span>,<span class="hljs-string">"fpr"</span>)
+plot(perf,colorize=<span class="hljs-literal">TRUE</span>)</code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-6-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-6-1.png" width="672"></a></p>
+</div>
+<div id="proc---2010" class="section level3">
+<h3><a href="https://cran.r-project.org/package=pROC">pROC</a> - 2010</h3>
+<p>It is clear from the downloads curve that <code>pROC</code> is also popular with data scientists. I like that it is pretty easy to get confidence intervals for the Area Under the Curve, <code>AUC</code>, on the plot.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(pROC)</code></pre>
+<pre><code class="hljs">## Type 'citation("pROC")' for a citation.</code></pre>
+<pre><code class="hljs">## 
+## Attaching package: 'pROC'</code></pre>
+<pre><code class="hljs">## The following objects are masked from 'package:stats':
+## 
+##     cov, smooth, var</code></pre>
+<pre class="r"><code class="hljs">pROC_obj &lt;- roc(df$labels,df$predictions,
+            smoothed = <span class="hljs-literal">TRUE</span>,
+            <span class="hljs-comment"># arguments for ci</span>
+            ci=<span class="hljs-literal">TRUE</span>, ci.alpha=<span class="hljs-number">0.9</span>, stratified=<span class="hljs-literal">FALSE</span>,
+            <span class="hljs-comment"># arguments for plot</span>
+            plot=<span class="hljs-literal">TRUE</span>, auc.polygon=<span class="hljs-literal">TRUE</span>, max.auc.polygon=<span class="hljs-literal">TRUE</span>, grid=<span class="hljs-literal">TRUE</span>,
+            print.auc=<span class="hljs-literal">TRUE</span>, show.thres=<span class="hljs-literal">TRUE</span>)
+
+
+sens.ci &lt;- ci.se(pROC_obj)
+plot(sens.ci, type=<span class="hljs-string">"shape"</span>, col=<span class="hljs-string">"lightblue"</span>)</code></pre>
+<pre><code class="hljs">## Warning in plot.ci.se(sens.ci, type = "shape", col = "lightblue"): Low
+## definition shape.</code></pre>
+<pre class="r"><code class="hljs">plot(sens.ci, type=<span class="hljs-string">"bars"</span>)</code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-7-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-7-1.png" width="672"></a></p>
+</div>
+<div id="prroc---2014" class="section level3">
+<h3><a href="https://cran.r-project.org/package=PRROC">PRROC</a> - 2014</h3>
+<p>Although not nearly as popular as <code>ROCR</code> and <code>pROC</code>, <code>PRROC</code> seems to be making a bit of a comeback lately. The terminology for the inputs is a bit eclectic, but once you figure that out the <code>roc.curve()</code> function plots a clean ROC curve with minimal fuss. <code>PRROC</code> is really set up to do precision-recall curves as the <a href="https://cran.r-project.org/web/packages/PRROC/vignettes/PRROC.pdf">vignette</a> indicates.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(PRROC)
+
+PRROC_obj &lt;- roc.curve(scores.class0 = df$predictions, weights.class0=df$labels,
+                       curve=<span class="hljs-literal">TRUE</span>)
+plot(PRROC_obj)</code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-8-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-8-1.png" width="672"></a></p>
+</div>
+<div id="plotroc---2014" class="section level3">
+<h3><a href="https://cran.r-project.org/package=plotROC">plotROC</a> - 2014</h3>
+<p><code>plotROC</code> is an excellent choice for drawing ROC curves with <code>ggplot()</code>. My guess is that it appears to enjoy only limited popularity because the documentation uses medical terminology like “disease status” and “markers”. Nevertheless, the documentation, which includes both a <a href="https://cran.r-project.org/web/packages/plotROC/vignettes/examples.html">vignette</a> and a <a href="https://sachsmc.shinyapps.io/plotROC/">Shiny application</a>, is very good.</p>
+<p>The package offers a number of feature-rich <code>ggplot()</code> geoms that enable the production of elaborate plots. The following plot contains some styling, and includes <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Clopper%E2%80%93Pearson_interval">Clopper and Pearson (1934) exact method</a> confidence intervals.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(plotROC)
+rocplot &lt;- ggplot(df, aes(m = predictions, d = labels))+ geom_roc(n.cuts=<span class="hljs-number">20</span>,labels=<span class="hljs-literal">FALSE</span>)
+rocplot + style_roc(theme = theme_grey) + geom_rocci(fill=<span class="hljs-string">"pink"</span>) </code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-9-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-9-1.png" width="672"></a></p>
+</div>
+<div id="precrec---2015" class="section level3">
+<h3><a href="https://cran.r-project.org/package=precrec">precrec</a> - 2015</h3>
+<p><code>precrec</code> is another library for plotting ROC and precision-recall curves.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(precrec)</code></pre>
+<pre><code class="hljs">## 
+## Attaching package: 'precrec'</code></pre>
+<pre><code class="hljs">## The following object is masked from 'package:pROC':
+## 
+##     auc</code></pre>
+<pre class="r"><code class="hljs">precrec_obj &lt;- evalmod(scores = df$predictions, labels = df$labels)
+autoplot(precrec_obj)</code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-10-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-10-1.png" width="672"></a></p>
+<p>Parameter options for the <code>evalmod()</code> function make it easy to produce basic plots of various model features.</p>
+<pre class="r"><code class="hljs">precrec_obj2 &lt;- evalmod(scores = df$predictions, labels = df$labels, mode=<span class="hljs-string">"basic"</span>)
+autoplot(precrec_obj2)   </code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-11-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-11-1.png" width="672"></a></p>
+</div>
+<div id="rocit---2019" class="section level3">
+<h3><a href="https://cran.r-project.org/package=ROCit">ROCit</a> - 2019</h3>
+<p><code>ROCit</code> is a new package for plotting ROC curves and other binary classification visualizations that rocketed onto the scene in January, and is climbing quickly in popularity. I would never have discovered it if I had automatically filtered my original search by downloads. The default plot includes the location of the <a href="https://en.wikipedia.org/wiki/Youden%27s_J_statistic">Yourden’s J Statistic</a>.</p>
+<pre class="r"><code class="hljs"><span class="hljs-keyword">library</span>(ROCit)</code></pre>
+<pre><code class="hljs">## Warning: package 'ROCit' was built under R version 3.5.2</code></pre>
+<pre class="r"><code class="hljs">ROCit_obj &lt;- rocit(score=df$predictions,class=df$labels)
+plot(ROCit_obj)</code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-12-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-12-1.png" width="672"></a></p>
+<p>Several other visualizations are possible. The following plot shows the cumulative densities of the positive and negative responses. The KS statistic shows the maximum distance between the two curves.</p>
+<pre class="r"><code class="hljs">ksplot(ROCit_obj)</code></pre>
+<p><a href="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-13-1.png" title="" class="fancybox" rel="article0"><img src="./Some R Packages for ROC Curves · R Views_files/unnamed-chunk-13-1.png" width="672"></a></p>
+<p>In this attempt to dig into CRAN and uncover some of the resources R contains for plotting ROC curves and other binary classifier visualizations, I have only scratched the surface. Moreover, I have deliberately ignored the many packages available for specialized applications, such as <a href="https://cran.r-project.org/package=survivalROC">survivalROC</a> for computing time-dependent ROC curves from censored survival data, and <a href="https://cran.r-project.org/web/packages/cvAUC/index.html">cvAUC</a>, which contains functions for evaluating cross-validated AUC measures. Nevertheless, I hope that this little exercise will help you find what you are looking for.</p>
+</div>
+
+            </div>
+            <footer class="article-footer">
+    <a data-url="/2019/03/01/some-r-packages-for-roc-curves/" data-id="8d460661cb4e22a7819f0b30b1562e13" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://rviews.rstudio.com/2019/03/01/some-r-packages-for-roc-curves/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+    
+        
+        
+            <i class="fa fa-folder"></i>
+            
+            
+            <a class="article-category-link" href="https://rviews.rstudio.com/categories/r-language">R Language</a>
+            ·
+            
+            
+            <a class="article-category-link" href="https://rviews.rstudio.com/categories/r-packages">R Packages</a>
+            
+            
+        
+    
+
+    
+        
+        
+            <i class="fa fa-tags"></i>
+            
+            
+            <a class="article-category-link" href="https://rviews.rstudio.com/tags/r-language">R Language</a>
+            ·
+            
+            
+            <a class="article-category-link" href="https://rviews.rstudio.com/tags/roc-curves">ROC curves</a>
+            ·
+            
+            
+            <a class="article-category-link" href="https://rviews.rstudio.com/tags/searching-for-packages">Searching for Packages</a>
+            
+            
+        
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+            if (!/^https?:/.test(url)) url = location.origin + url;
+            var encodedUrl = encodeURIComponent(url);
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+        </div>
+
+        
+<nav id="article-nav">
+    
+    <a href="https://rviews.rstudio.com/2019/02/25/january-2019-top-40-new-cran-packages/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">January 2019: “Top 40” New CRAN Packages</div>
+    </a>
+    
+
+    
+    <a href="https://rviews.rstudio.com/2019/03/06/intro-to-graph-analysis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">Graph analysis using the tidyverse</div>
+    </a>
+    
+</nav>
+
+
+    </article>
+
+    
+    <section id="comments">
+      <p>You may leave a comment below or discuss the post in the forum <a href="https://community.rstudio.com/">community.rstudio.com</a>.</p>
+        <div id="disqus_thread"><iframe id="dsq-app4817" name="dsq-app4817" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Some R Packages for ROC Curves · R Views_files/saved_resource.html" horizontalscrolling="no" verticalscrolling="no" style="height: 862px !important;"></iframe></div>
+    </section>
+    
+</section>
+
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      © 2016 - 2020
+      RStudio, PBC. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-20375833-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="./Some R Packages for ROC Curves · R Views_files/jquery.fancybox.pack.js.download"></script>
+<script src="./Some R Packages for ROC Curves · R Views_files/script.js.download"></script>
+<script src="./Some R Packages for ROC Curves · R Views_files/highlight.min.js.download"></script>
+<script src="./Some R Packages for ROC Curves · R Views_files/r.min.js.download"></script>
+<script src="./Some R Packages for ROC Curves · R Views_files/yaml.min.js.download"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<script src="./Some R Packages for ROC Curves · R Views_files/MathJax.js.download"></script>
+<script>
+MathJax.Hub.Queue(function() {
+  var jaxs = MathJax.Hub.getAllJax();
+  for (var i = 0; i < jaxs.length; i++) {
+    var $jax = $(jaxs[i].SourceElement());
+    if ($jax.parent().is('code')) $jax.unwrap();
+  }
+});
+</script>
+
+
+
+
+
+</div><div id="mktoStyleLoaded" style="display: none; border-top-color: rgb(18, 52, 86);"></div><form novalidate="novalidate" class="mktoForm mktoHasWidth mktoLayoutLeft" style="font-family: inherit; font-size: 13px; color: rgb(51, 51, 51); visibility: hidden; position: absolute; top: -500px; left: -1000px; width: 1519px;"></form><iframe name="mktoFormsXDIframe0.0626653868960203" id="MktoForms2XDIframe" src="./Some R Packages for ROC Curves · R Views_files/XDFrame.html" style="display: none;"></iframe><iframe style="display: none;" src="./Some R Packages for ROC Curves · R Views_files/saved_resource(1).html"></iframe></body></html>
